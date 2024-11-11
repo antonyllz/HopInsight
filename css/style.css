@@ -1,5 +1,4 @@
-.body{
-    font-weight: bold;
+.background {
     background-image: url(../img/back.jpg);
     background-size: cover; 
     background-position: center; 
@@ -11,6 +10,7 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
     padding-left: 25px;
+    font-weight: bold;
 }
 .navbar-expand-lg {
     background-image: url(../img/nav-back.jpg);
@@ -19,21 +19,17 @@
     background-repeat: no-repeat;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
-.hs {
-    margin-top: 200px;
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 85px;
 }
 h1 {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
-}
-h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     color: rgb(255, 255, 255);
-    margin-top: 90px;   
     font-weight: bold;
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
@@ -65,39 +61,19 @@ h2 {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
-.container-fluid {
-    align-items: center;
+.team-title {
+    padding: 75px;
+}
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
-.team-title {
-    font-size:xxx-large;
-}
-.team-info {
-    width: auto;
-    height: auto;
-    margin: 10%;
-}
-.team-member img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
-    border-radius: 100px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-}
-.team-member {
-    margin-top: 100px;
-    text-align: center;
-    margin-bottom: 32px;
-    color: #ffffff;
-}
-.team-member:hover {
-    transform: scale(1.10);
-}
-.background {
-    background-image: url(../img/back.jpg);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    background-color: #075AC6;
+.card:hover {
+    transform: scale(1.05);
 }
