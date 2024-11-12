@@ -12,6 +12,7 @@
     padding-left: 25px;
     font-weight: bold;
 }
+
 .navbar-expand-lg {
     background-image: url(../img/nav-back.jpg);
     background-size: cover; 
@@ -76,4 +77,140 @@ h1 {
 }
 .card:hover {
     transform: scale(1.05);
+}
+/*login  e backvideo*/
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 12px;
+    justify-content: center;
+  }
+  
+  .logo-container {
+    text-align: center;
+  }
+  
+  .logo {
+    height: 70px;
+    width: auto;
+    margin: 0 auto;
+  }
+  
+  .heading {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .form-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff; 
+  }
+  
+  .label-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .forgot-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #81818186; 
+    text-decoration: none;
+  }
+  
+  .forgot-link:hover {
+    color: #1b1b1b 
+  }
+  
+  .input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #d1d5db; 
+    color: #1f2937;
+  }
+  
+  .input:focus {
+    border-color: #075AC6; 
+    outline: none;
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0e1d7d;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0a1557; 
+  }
+  
+  .signup-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff; 
+  }
+  
+  .signup-link {
+    color: #e2e2e2; 
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .signup-link:hover {
+    color: #0e1d7d;
+  }
+  
+  .video-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    z-index: -1; 
+}
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    opacity: 0.5;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%); 
+    object-fit: cover;
+    filter: brightness(0.5); 
 }
