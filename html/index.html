@@ -13,10 +13,39 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="icon" href="../icons/favicon.png" />
   </head>
+  <style>
+    .button {
+    color: #ffffff;
+    font-weight: bold;
+}
+.input-group {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    border-radius: 20px;
+}
+.form-control {
+    padding-left: 10px;
+    background-color: #6e6e6e;
+    outline: none; 
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px
+}
+.btn {
+    color: #ffffff;
+    background-color: #075AC6;
+    font-weight: bold;
+    padding: 15px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+  </style>
   <body class="background">
     <div class="video-overlay">
       <video autoplay muted loop playsinline class="video-bg">
-        <source src="/vids/videoplayback.webm" type="video/mp4" />
+        <source src="../vids/videoplayback.webm" type="video/mp4" />
       </video>
     </div>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -56,7 +85,7 @@
             </li>
             <li>
               <a class="txtnav" href="auth.html" style="margin-left: 20px; margin-right: 40px;"   
-                >Entrar</a
+                >Login</a
               >
             </li>
           </ul>
@@ -66,25 +95,15 @@
     <div class="image-container">
       <img src="../img/name.png" alt="Nome Hop Insight" style="width: 30%" />
     </div>
-    <h1>
+  <!--
+    <h1 class="merchan">
       Rastreamento preciso e seguro com detalhes completos de cada salto até o
       host de destino!
     </h1>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        name="input-mtr"
-        placeholder="$ mtr 0.0.0.0"
-        aria-label="Campo para informar o IP alvo."
-        required
-      />
-      <a href="back-end/mtr"
-        ><button class="btn btn-outline-secondary" type="button">
-          <img src="../icons/icon-play.png" alt="Botão Iniciar" width="10 px" />
-          Iniciar
-        </button></a
-      >
-    </div>
+  -->
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="$ mtr 0.0.0.0" aria-label="$ mtr 0.0.0.0" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Iniciar</button>
+  </div>
   </body>
 </html>
