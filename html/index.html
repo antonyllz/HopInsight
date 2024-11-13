@@ -14,33 +14,49 @@
     <link rel="icon" href="../icons/favicon.png" />
   </head>
   <style>
-    .button {
-    color: #ffffff;
-    font-weight: bold;
-}
-.input-group {
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 35%;
-    border-radius: 20px;
-}
-.form-control {
-    padding-left: 10px;
-    background-color: #6e6e6e;
-    outline: none; 
-    border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 20px
-}
-.btn {
-    color: #ffffff;
-    background-color: #075AC6;
-    font-weight: bold;
-    padding: 15px;
-    margin-left: 20px;
-    border-radius: 10px;
-}
+    /* Input */
+    .input-container {
+        display: flex;
+        align-items: center;
+        background-color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .input-field {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: 2px solid #ffffff;
+        border-radius: 8px;
+        width: 300px;
+        margin-right: auto;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    .input-field::placeholder {
+        color: #999;
+        font-weight: bolder;
+    }
+    .submit-btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .submit-btn:active {
+        background-color: #004085;
+    }
   </style>
   <body class="background">
     <div class="video-overlay">
@@ -100,10 +116,15 @@
       Rastreamento preciso e seguro com detalhes completos de cada salto até o
       host de destino!
     </h1>
-  -->
+  
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="$ mtr 0.0.0.0" aria-label="$ mtr 0.0.0.0" aria-describedby="button-addon2">
   <button class="btn btn-outline-secondary" type="button" id="button-addon2">Iniciar</button>
   </div>
+  -->
+  <div class="input-container">
+    <input type="text" class="input-field" placeholder="$ mtr 0.0.0.0" />
+    <button class="submit-btn">Iniciar  <img src="../icons/icon-play.png" style="height: 20px;"></button>
+</div>
   </body>
 </html>
