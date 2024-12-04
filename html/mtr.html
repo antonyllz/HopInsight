@@ -21,7 +21,6 @@
         color: rgb(255, 255, 255);
         font-weight: bold;
         text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-        padding-top: 15%;
     }
 </style>
 <body class="background">
@@ -75,7 +74,49 @@
           </div>
         </div>
       </nav>
-      <h1 class="title">EM DESENVOLVIMENTO!</h1>
+      <div class="container mt-5">
+        <h1 class="text-center title">Hop Insight - Traceroute</h1>
+        <div class="mt-4">
+            <form id="tracerouteForm" class="text-center">
+                <input type="text" id="target" class="form-control mb-3" placeholder="Destino ex: 8.8.8.8" required />
+                <button type="submit" class="btn btn-primary">Iniciar Traceroute</button>
+            </form>
+            <div id="results" class="mt-4"></div>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('tracerouteForm');
+        const resultsDiv = document.getElementById('results');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const target = document.getElementById('target').value;
+
+            resultsDiv.innerHTML = '<p>Executando traceroute...</p>';
+
+            try {
+                const response = await fetch('http://localhost:3000/traceroute', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ target }),
+                });
+
+                if (!response.ok) throw new Error('Erro ao executar traceroute.');
+
+                const data = await response.json();
+                resultsDiv.innerHTML = '<h3>Resultados:</h3><ul class="list-group"></ul>';
+                const list = resultsDiv.querySelector('.list-group');
+                data.forEach(({ ttl, hop, time }) => {
+                    const item = document.createElement('li');
+                    item.className = 'list-group-item';
+                    item.textContent = `TTL: ${ttl}, Hop: ${hop}, Tempo: ${time}`;
+                    list.appendChild(item);
+                });
+            } catch (error) {
+                resultsDiv.innerHTML = `<p class="text-danger">Erro: ${error.message}</p>`;
+            }
+        });
+    </script>
 </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
