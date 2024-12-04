@@ -10,7 +10,7 @@ A função principal do **HopInsight** é realizar um diagnóstico e análise de
 
 Esta aplicação oferece uma visão detalhada e em tempo real das rotas de rede, sendo uma solução rápida, segura e eficiente para administradores de redes e engenheiros que desejam garantir uma conexão confiável e de alta performance.
 
-![Preview do Site](img/preview.gif)
+![Preview do Site](img/preview.png)
 
 ## Funcionalidades
 
