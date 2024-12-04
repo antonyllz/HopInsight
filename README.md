@@ -30,5 +30,7 @@ Para utilizar o **HopInsight**, siga os passos de instalação abaixo:
 ## Desenvolvedores
 
 gabriel.lavor@academico.ifpb.edu.br
+
 arthur.muniz@academico.ifpb.edu.br
+
 antony.cesar@academico.ifpb.edu.br
