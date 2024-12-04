@@ -26,3 +26,9 @@ Para utilizar o **HopInsight**, siga os passos de instalação abaixo:
 1. Clone este repositório:
    ```bash
    git clone https://github.com/anthonyllz/hopinsight.git
+
+## Desenvolvedores
+
+gabriel.lavor@academico.ifpb.edu.br
+arthur.muniz@academico.ifpb.edu.br
+antony.cesar@academico.ifpb.edu.br
