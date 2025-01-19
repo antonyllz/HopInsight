@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin"
+    },
+    {
+      "id": "f076",
+      "username": "antony",
+      "password": "123",
+      "birthdate": "2005-07-25"
+    },
+    {
+      "id": "b2b5",
+      "username": "tonyco",
+      "password": "182578",
+      "birthdate": "2005-07-25"
+    },
+    {
+      "id": "3fc0",
+      "username": "userteste",
+      "password": "123",
+      "birthdate": "1987-04-25"
+    }
+  ]
+}

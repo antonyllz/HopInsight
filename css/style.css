@@ -1,5 +1,6 @@
 .background {
-    background-image: url(../img/back.jpg);
+    /* background-image: url(../img/back.jpg); */
+    background: linear-gradient(to bottom, #004b9b, #00122e);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -9,39 +10,78 @@
     font-size: 30px;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    padding-left: 25px;
-    font-weight: bold;
+    padding-left: 25px
 }
 .navbar-expand-lg {
-    background-image: url(../img/nav-back.jpg);
+    /* background-image: url(../img/nav-back.jpg); */
+    background: linear-gradient(to left, #004b9b, #00122e);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
 }
-.merchan {
+
+.image-container img {
+  max-width: 30%;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .image-container img {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container img {
+    max-width: 70%;
+  }
+}
+
+.team-title-animated {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     color: rgb(255, 255, 255);
-    font-weight: bold;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+    padding-top: 5%;
+    width: 90%;
+    max-width: 600px;
+
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .team-title {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-    padding-top: 5%;
+  text-align: center;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  padding-top: 5%;
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.card {
+  width: 900px;
+  max-width: 500px;
+}
+
 .team-card {
   text-align: center;
   justify-content: center;
@@ -61,17 +101,7 @@
   height: 150px;
   object-fit: cover;
 }
-.card {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
-}
-.card:hover {
-    transform: scale(1.05);
-}
+
 /*login  e backvideo*/
 .container {
     display: flex;
@@ -230,6 +260,10 @@
   margin-right: auto;
   outline: none;
   transition: border-color 0.3s;
+
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .input-field::placeholder {
   color: #999;
@@ -251,4 +285,39 @@
 
 .submit-btn:active {
   background-color: #004085;
+}
+
+
+/* Alert card */
+
+.feedback-card {
+  position: fixed;
+  top: 90px;
+  right: 90px;
+  z-index: 9999;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.feedback-card.success {
+  border-left: 5px solid #4caf50;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.feedback-card.error {
+  border-left: 5px solid #f44336;
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.d-none {
+  display: none;
 }
