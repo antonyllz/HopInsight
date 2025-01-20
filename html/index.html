@@ -14,11 +14,6 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="background">
-    <!-- <div class="video-overlay">
-      <video autoplay muted loop playsinline class="video-bg">
-        <source src="../vids/videoplayback.webm" type="video/mp4" />
-      </video>
-    </div> -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="txtnav" href="index.html">
@@ -62,13 +57,41 @@
       <img src="../img/name.png" alt="Nome Hop Insight"/>
     </div>
     <div class="input-container">
-      <input type="text" class="input-field" placeholder="$ mtr 0.0.0.0" />
-      <a href="../html/mtr.html"><button class="submit-btn">Iniciar  <img src="../icons/icon-play.png" style="height: 20px;"></button></a>
+      <input type="text" class="input-field" id="mtr-value" placeholder="$ mtr 0.0.0.0" />
+      <a><button class="submit-btn" onclick="sendInputValue()">Iniciar  <img src="../icons/icon-play.png" style="height: 20px;"></button></a>
     </div>
-  <script
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
   </body>
+
+  <script>
+    function sendInputValue() {
+      const inputValue = document.getElementById('mtr-value').value;
+      console.log(inputValue)
+
+      if (!inputValue) {
+        alert("Por favor, insira um valor no campo.");
+        return;
+      }
+
+      fetch('/mtr-api/MTR.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: inputValue })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Resultado salvo com sucesso!');
+      })
+      .catch(error => {
+        console.error('Erro ao enviar dados:', error);
+        alert('Erro ao enviar dados');
+      });
+  }
+  </script>
 </html>
