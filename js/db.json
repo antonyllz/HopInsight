@@ -22,6 +22,42 @@
       "username": "userteste",
       "password": "123",
       "birthdate": "1987-04-25"
+    },
+    {
+      "id": "4e2a",
+      "username": "ad",
+      "password": "ad",
+      "birthdate": "2025-01-13"
+    },
+    {
+      "id": "53d4",
+      "username": "teste",
+      "password": "23",
+      "birthdate": "2025-01-02"
+    },
+    {
+      "id": "f3eb",
+      "username": "teste12",
+      "password": "2323",
+      "birthdate": "2025-01-02"
+    },
+    {
+      "id": "144e",
+      "username": "admin23",
+      "password": "124",
+      "birthdate": "2025-01-08"
+    },
+    {
+      "id": "f2bd",
+      "username": "antony2",
+      "password": "teste",
+      "birthdate": "2025-01-07"
+    },
+    {
+      "id": "ee67",
+      "username": "rzert0ny",
+      "password": "teste",
+      "birthdate": "2025-01-06"
     }
   ]
 }

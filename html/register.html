@@ -85,66 +85,15 @@
             </form>
           </div>
           <div class="card-footer text-center text-muted">
-            <small>Já tem uma conta? <a href="/html/auth.html">Faça login</a></small>
+            <small>Já tem uma conta? <a href="../html/auth.html">Faça login</a></small>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="../js/functions.js"></script>
   <script>
-    // Seleciona o formulário pelo ID
-    const form = document.getElementById("register-form");
-
-    // Adiciona um evento para capturar o envio do formulário
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault(); // Evita o envio padrão do formulário
-
-      // Captura os valores dos campos
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const birthdate = document.getElementById("birthdate").value;
-
-      // Valida se o usuário já existe
-      try {
-        // Faz um GET para buscar todos os usuários
-        const response = await fetch("http://localhost:3000/users");
-        const users = await response.json();
-
-        // Verifica se o nome de usuário já existe
-        const userExists = users.some((user) => user.username === username);
-
-        if (userExists) {
-          alert("Nome de usuário já está em uso. Por favor, escolha outro.");
-          return; // Interrompe o processo de cadastro
-        }
-
-        // Cria o objeto para enviar
-        const newUser = {
-          username,
-          password,
-          birthdate,
-        };
-
-        // Faz o POST para cadastrar o novo usuário
-        const postResponse = await fetch("http://localhost:3000/users", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        });
-
-        if (postResponse.ok) {
-          alert("Usuário cadastrado com sucesso!");
-          form.reset(); // Limpa o formulário
-        } else {
-          alert("Ocorreu um erro ao cadastrar o usuário.");
-        }
-      } catch (err) {
-        console.error("Erro ao conectar-se à API:", err);
-        alert("Não foi possível conectar-se ao servidor.");
-      }
-    });
+        initRegisterForm();
   </script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
