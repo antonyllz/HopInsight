@@ -1,0 +1,11 @@
+POST http://localhost:3300/users
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "teste",
+    "birthdate": "2004-02-08"
+}
+
+###
+GET http://localhost:3300/users

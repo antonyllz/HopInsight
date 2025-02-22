@@ -7,7 +7,7 @@ async function create({ username, password, birthdate }) {
         INSERT INTO
             users (username, password, birthdate)
         VALUES
-            (?, ?)
+            (?, ?, ?)
         `;
     
     const { lastID } = await db.run(sql, [username, password, birthdate]);

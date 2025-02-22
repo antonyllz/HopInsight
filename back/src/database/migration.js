@@ -12,7 +12,16 @@ async function up() {
         )
     `;
 
+    const insertDataSql = `
+    INSERT INTO users (username, password, birthdate) VALUES 
+        ('antony', '123', '2005-07-25'),
+        ('gabriel', '456', '2003-05-15'),
+        ('arthur', '789', '2002-10-30');
+    `;
+
+
     await db.run(hostsSql);
+    await db.run(insertDataSql);
     db.close();
 }
 

@@ -11,10 +11,11 @@ class HttpError extends Error {
   const router = express.Router();
    
   router.post('/users', async (req, res) => {
+    console.log(req.body);
     const { username, password, birthdate } = req.body;
    
     if (!username || !password || !birthdate) {
-      throw new HttpError('Error when passing parameters');
+      throw new HttpError('Erro ao cadastrar o usuário!');
     }
    
     try {
@@ -22,7 +23,8 @@ class HttpError extends Error {
    
       return res.status(201).json(createdUser);
     } catch (error) {
-      throw new HttpError('Unable to create a user');
+      console.log(error)
+      throw new HttpError('Não foi possível criar o usuário!');
     }
   });
    
@@ -66,7 +68,7 @@ class HttpError extends Error {
     const id = req.params.id;
    
     if (!username || !password) {
-      throw new HttpError('Error when passing parameters');
+      throw new HttpError('Erro ao utilizar o put');
     }
    
     try {
