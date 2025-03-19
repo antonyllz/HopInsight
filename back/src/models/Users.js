@@ -1,16 +1,16 @@
 import Database from '../database/database.js'
 
-async function create({ username, password, birthdate }) {
+async function create({ email, password, birthdate }) {
     const db = await Database.connect();
 
     const sql = `
         INSERT INTO
-            users (username, password, birthdate)
+            users (email, password, birthdate)
         VALUES
             (?, ?, ?)
         `;
     
-    const { lastID } = await db.run(sql, [username, password, birthdate]);
+    const { lastID } = await db.run(sql, [email, password, birthdate]);
 
     db.close();
 
@@ -74,19 +74,19 @@ async function readById(id) {
     return user;
 }
    
-async function update({ id, username, password, birthdate }) {
+async function update({ id, email, password, birthdate }) {
     const db = await Database.connect();
    
     const sql = `
         UPDATE
           users
         SET
-          username = ?, password = ?, birthdate = ?
+          email = ?, password = ?, birthdate = ?
         WHERE
           id = ?
       `;
    
-    const { changes } = await db.run(sql, [username, password, birthdate, id]);
+    const { changes } = await db.run(sql, [email, password, birthdate, id]);
    
     db.close();
    

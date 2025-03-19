@@ -1,3 +1,21 @@
+// mtr
+
+import mtrPostRequest from "../../back/mtr-api/mtr";
+
+const btn_get = document.querySelector('#btn_get');
+const mtr_value = document.querySelector('#mtr_value');
+
+btn_get.addEventListener('click', addIp);
+document
+  .querySelector('#inputIpAddress')
+  .addEventListener('keypress', function (e) {
+    let key = e.which || e.keyCode;
+    if (key == 13) {
+      mtrPostRequest(addIp);
+    }
+  });
+
+
 // Função para exibir o card de feedback
 function showFeedback(message, type) {
     const feedbackCard = document.getElementById("feedback-card");
@@ -18,7 +36,7 @@ const loginForm = document.querySelector(".form");
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
   try {
@@ -26,11 +44,11 @@ loginForm.addEventListener("submit", async (e) => {
     const users = await response.json();
 
     const user = users.find(
-      (user) => user.username === username && user.password === password
+      (user) => user.email === email && user.password === password
     );
 
     if (user) {
-      showFeedback(`Bem-vindo, ${user.username}!`, "success");
+      showFeedback(`Bem-vindo, ${user.email}!`, "success");
       window.location.href = "../html/index.html";
     } else {
       showFeedback("Usuário ou senha incorretos. Tente novamente.", "error");
@@ -53,7 +71,7 @@ function initRegisterForm() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); 
 
-    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const birthdate = document.getElementById("birthdate").value;
 
@@ -61,15 +79,15 @@ function initRegisterForm() {
       const response = await fetch("http://localhost:3300/users");
       const users = await response.json();
 
-      const userExists = users.some((user) => user.username === username);
+      const userExists = users.some((user) => user.email === email);
 
       if (userExists) {
-        alert("Nome de usuário já está em uso. Por favor, escolha outro.");
+        alert("E-mail já está em uso. Por favor, escolha outro.");
         return; 
       }
 
       const newUser = {
-        username,
+        email,
         password,
         birthdate,
       };
@@ -96,3 +114,4 @@ function initRegisterForm() {
     }
   });
 }
+

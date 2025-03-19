@@ -1,7 +1,8 @@
-const axios = require('axios'); // Importa o axios para fazer requisições HTTP
+import axios from 'axios';
 
 // POST
 async function mtrPostRequest(url) {
+  console.log('Rodando MTR para destino: ', url)
   const apiUrl = "https://api.siterelic.com/mtr";
 
   const payload = {
@@ -27,3 +28,5 @@ async function mtrPostRequest(url) {
 }
 
 mtrPostRequest("https://google.com");
+
+export default mtrPostRequest;
